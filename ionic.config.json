@@ -1,0 +1,7 @@
+{
+  "name": "entrafacil",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
