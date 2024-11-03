@@ -27,11 +27,13 @@
 ion-avatar{ 
   margin: 0;
   padding: 0;
-  font-size: 90px;
+  height: 90px;
+  width: 90px;
   --color: currentColor;
 }
 ion-router-link {
-  margin-top: 4px; /* Ajusta este valor para controlar el espaciado */
+  margin: 0; /* Ajusta este valor para controlar el espaciado */
+  padding: 0;
   color: inherit; /* Hereda el color del padre */
   text-decoration: none; /* Quita el subrayado */
 }
