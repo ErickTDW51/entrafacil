@@ -12,4 +12,8 @@ export class HomePage {
   config() {
     this.navCtrl.navigateForward('/config');
   }
+
+  perfil(){
+    this.navCtrl.navigateForward('/profile');
+  }
 }
