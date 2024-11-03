@@ -27,17 +27,26 @@
 
     <ion-row>
       <ion-col></ion-col>
-      <ion-col class="centro"></ion-col>
+      <ion-col class="centro" (click)="pin()">
+        <ion-icon name="card-outline" class="btn_pin"></ion-icon>
+        <ion-router-link routerLink="pin()">Generar código</ion-router-link>
+      </ion-col>
       <ion-col></ion-col>
     </ion-row>
     <ion-row>
       <ion-col></ion-col>
-      <ion-col class="centro"></ion-col>
+      <ion-col class="centro" (click)="pin()">
+        <ion-icon name="people-outline" class="btn_visitas"></ion-icon>
+        <ion-router-link routerLink="/pin">Generar visita</ion-router-link>
+      </ion-col>
       <ion-col></ion-col>
     </ion-row>
     <ion-row>
       <ion-col></ion-col>
-      <ion-col class="centro"></ion-col>
+      <ion-col class="centro" (click)="toast('bottom')">
+        <ion-icon name="close-circle-outline" class="btn_panico" color="danger"></ion-icon>
+        <p>Botón de pánico</p>
+      </ion-col>
       <ion-col></ion-col>
     </ion-row>
   </ion-grid>

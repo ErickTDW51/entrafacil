@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,30 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage {
-  constructor(private navCtrl: NavController) { }
+  constructor(
+    private navCtrl: NavController,
+    private toastController: ToastController // Inyecta aquí el ToastController
+  ) {}
 
   config() {
     this.navCtrl.navigateForward('/config');
   }
 
-  perfil(){
+  perfil() {
     this.navCtrl.navigateForward('/profile');
+  }
+
+  pin() {
+    this.navCtrl.navigateForward('/pin');
+  }
+
+  async toast(position: 'top' | 'middle' | 'bottom') {
+    const toast = await this.toastController.create({
+      message: '¡Alerta activada!',
+      duration: 2000,
+      position: position,
+    });
+
+    await toast.present();
   }
 }

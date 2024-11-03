@@ -28,7 +28,18 @@ ion-avatar {
 }
 
 ion-router-link {
-  margin-top: 4px; /* Ajusta este valor para controlar el espaciado */
+  margin-top: 10px; /* Ajusta este valor para controlar el espaciado */
   color: inherit; /* Hereda el color del padre */
   text-decoration: none; /* Quita el subrayado */
+}
+
+.btn_pin, .btn_visitas{
+  margin-top: 40px;
+  font-size: 90px;
+}
+
+
+.btn_panico{
+  margin-top: 40px;
+  font-size: 90px;
 }
