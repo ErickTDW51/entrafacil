@@ -1,0 +1,36 @@
+.titulo{
+    text-align: center;
+}
+
+.digit-container {
+    border: 1px solid gray; /* Borde del cuadrado */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80px; /* Ajusta el tamaño según sea necesario */
+  }
+  
+  .digit {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .generate-text {
+    cursor: pointer;
+    color: blue;
+    font-size: 30px;
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .btn_panico{
+    margin-top: 40px;
+    font-size: 90px;
+  }
+  .centro {
+    display: flex; /* Usa flexbox para centrar */
+    flex-direction: column; /* Asegúrate de que los elementos se alineen en columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+  }

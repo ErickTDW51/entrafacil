@@ -10,7 +10,7 @@ import { ToastController } from '@ionic/angular';
 export class HomePage {
   constructor(
     private navCtrl: NavController,
-    private toastController: ToastController // Inyecta aquí el ToastController
+    private ToastCtrl: ToastController // Inyecta aquí el ToastController
   ) {}
 
   config() {
@@ -26,7 +26,7 @@ export class HomePage {
   }
 
   async toast(position: 'top' | 'middle' | 'bottom') {
-    const toast = await this.toastController.create({
+    const toast = await this.ToastCtrl.create({
       message: '¡Alerta activada!',
       duration: 2000,
       position: position,
