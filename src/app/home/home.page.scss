@@ -1,20 +1,16 @@
-.config{
+.config {
   text-align: right;
 }
 
-
-.btn_config{
-  margin: 0;
-  padding: 0;
-  font-size: 35px;
-  --color:currentColor;
-  align-items: right;
+.btn_config {
+  --color: currentColor;
 }
 
-.centro{
-  
-  justify-content: center;
-  text-align: center;
+.centro {
+  display: flex; /* Usa flexbox para centrar */
+  flex-direction: column; /* Asegúrate de que los elementos se alineen en columna */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
 }
 
 .btn_user {
@@ -24,16 +20,15 @@
   --color: currentColor;
 }
 
-ion-avatar{ 
+ion-avatar {
   margin: 0;
   padding: 0;
   height: 90px;
   width: 90px;
-  --color: currentColor;
 }
+
 ion-router-link {
-  margin: 0; /* Ajusta este valor para controlar el espaciado */
-  padding: 0;
+  margin-top: 4px; /* Ajusta este valor para controlar el espaciado */
   color: inherit; /* Hereda el color del padre */
   text-decoration: none; /* Quita el subrayado */
 }
