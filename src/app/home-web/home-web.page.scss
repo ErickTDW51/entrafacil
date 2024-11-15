@@ -1,0 +1,17 @@
+ion-tab-button {
+    --icon-size: 30px; /* Cambia el tamaño del icono */
+    --label-font-size: 18px; /* Cambia el tamaño del texto */
+  }
+  
+  ion-tab-button ion-icon {
+    font-size: 30px; /* Asegura que los iconos sean grandes */
+  }
+  
+  ion-tab-button ion-label {
+    font-size: 18px; /* Ajusta el tamaño de la etiqueta */
+  }
+
+  ion-tab-button{
+    margin: 40px;
+    height: auto;
+  }

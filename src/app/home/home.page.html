@@ -1,20 +1,22 @@
 <ion-header [translucent]="true"></ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="content">
   <ion-header collapse="condense"></ion-header>
 
   <ion-grid>
-    <ion-row>
+    <!-- Fila de configuración -->
+    <ion-row class="config-row">
       <ion-col></ion-col>
       <ion-col></ion-col>
-      <ion-col class="config">
-        <ion-button fill="clear" (click)="config()" class="btn_config">
-          <ion-icon name="settings-outline" style="font-size: 50px;"></ion-icon>
+      <ion-col class="config" (click)="config()">
+        <ion-button fill="clear" class="btn_config">
+          <ion-icon name="settings-outline"></ion-icon>
         </ion-button>
       </ion-col>
     </ion-row>
     
-    <ion-row>
+    <!-- Fila de perfil -->
+    <ion-row class="center-row">
       <ion-col></ion-col>
       <ion-col class="centro" (click)="perfil()">
         <ion-avatar>
@@ -25,7 +27,8 @@
       <ion-col></ion-col>
     </ion-row>
 
-    <ion-row>
+    <!-- Fila de generación de código -->
+    <ion-row class="center-row">
       <ion-col></ion-col>
       <ion-col class="centro" (click)="pin()">
         <ion-icon name="card-outline" class="btn_pin"></ion-icon>
@@ -33,7 +36,9 @@
       </ion-col>
       <ion-col></ion-col>
     </ion-row>
-    <ion-row>
+
+    <!-- Fila de generación de visita -->
+    <ion-row class="center-row">
       <ion-col></ion-col>
       <ion-col class="centro" (click)="pin()">
         <ion-icon name="people-outline" class="btn_visitas"></ion-icon>
@@ -41,7 +46,9 @@
       </ion-col>
       <ion-col></ion-col>
     </ion-row>
-    <ion-row>
+
+    <!-- Fila del botón de pánico -->
+    <ion-row class="center-row">
       <ion-col></ion-col>
       <ion-col class="centro" (click)="toast('bottom')">
         <ion-icon name="close-circle-outline" class="btn_panico" color="danger"></ion-icon>

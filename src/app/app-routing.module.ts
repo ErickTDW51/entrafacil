@@ -27,6 +27,22 @@ const routes: Routes = [
     path: 'pin',
     loadChildren: () => import('./pin/pin.module').then( m => m.PinPageModule)
   },
+  {
+    path: 'home-web',
+    loadChildren: () => import('./home-web/home-web.module').then( m => m.HomeWebPageModule)
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: 'controladmin',
+    loadChildren: () => import('./controladmin/controladmin.module').then( m => m.ControladminPageModule)
+  },
+  {
+    path: 'crearperfil',
+    loadChildren: () => import('./crearperfil/crearperfil.module').then( m => m.CrearperfilPageModule)
+  },
 ];
 
 @NgModule({
