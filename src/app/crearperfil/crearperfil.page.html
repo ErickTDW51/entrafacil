@@ -1,13 +1,45 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>crearperfil</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">crearperfil</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div class="registro">
+    <div class="foto">
+      <ion-icon name="person-circle-outline"></ion-icon>
+    </div>
+    <ion-grid style="width: 700px;">
+      <ion-row>
+      <ion-col class="nombre">
+        <ion-input label="Nombre" label-placement="floating" fill="outline" placeholder="Nombre"></ion-input>
+      </ion-col>
+      <br>
+      <ion-col class="Apellido">
+        <ion-input label="Apellido" label-placement="floating" fill="outline" placeholder="Apellido"></ion-input>
+      </ion-col>
+      </ion-row>
+      <br>
+      <ion-row>
+      <ion-col class="Asignar tarjeta">
+        <ion-input label="Asignar tarjeta" label-placement="floating" fill="outline" placeholder="tarjeta"></ion-input>
+      </ion-col>
+      <br>
+      <ion-col class="email">
+        <ion-input label="Email" label-placement="floating" fill="outline" placeholder="Email"></ion-input>
+      </ion-col>
+    </ion-row>
+      <br>  
+      <ion-row class="Contrasena">
+        <ion-input label="Contrasña" label-placement="floating" fill="outline" placeholder="Contrasña"></ion-input>
+      </ion-row>
+      <br>
+      <ion-row class="Contrasena">
+        <ion-input label="Confirmar contraseña" label-placement="floating" fill="outline" placeholder="Contrasña"></ion-input>
+      </ion-row>
+      <br>
+      <ion-button class="" expand="block">
+        Registrar
+      </ion-button>
+    </ion-grid>
+  </div>
 </ion-content>

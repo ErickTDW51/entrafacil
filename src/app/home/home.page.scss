@@ -1,51 +1,44 @@
-.config {
-  text-align: right;
-}
-
-
-.btn_config{
-  margin: 0;
-  padding: 0;
-  font-size: 35px;
-  --color:currentColor;
-  align-items: right;
-}
-
+/* Centrando contenido dentro de las columnas */
 .centro {
-  display: flex; /* Usa flexbox para centrar */
-  flex-direction: column; /* Asegúrate de que los elementos se alineen en columna */
+  display: flex;
+  flex-direction: column;
   justify-content: center; /* Centra verticalmente */
   align-items: center; /* Centra horizontalmente */
+  text-align: center;
+  height: 100%; /* Asegura que el contenedor ocupe todo el espacio */
 }
 
-.btn_user {
-  margin: 0;
-  padding: 0;
-  font-size: 90px;
-  --color: currentColor;
-}
-
+/* Tamaño y espaciado para avatar */
 ion-avatar {
-  margin: 0;
-  padding: 0;
   height: 90px;
   width: 90px;
-  --color: currentColor;
+  margin: 0 auto; /* Centra horizontalmente el avatar */
 }
 
+/* Espaciado para los enlaces */
 ion-router-link {
-  margin-top: 10px; /* Ajusta este valor para controlar el espaciado */
-  color: inherit; /* Hereda el color del padre */
-  text-decoration: none; /* Quita el subrayado */
+  margin-top: 10px;
+  color: inherit;
+  text-decoration: none;
 }
 
-.btn_pin, .btn_visitas{
-  margin-top: 40px;
+/* Tamaños de íconos y espaciado */
+.btn_user, .btn_pin, .btn_visitas, .btn_panico {
   font-size: 90px;
+  margin-top: 20px; /* Ajusta el espaciado superior */
 }
 
+/* Alineación de la cuadrícula */
+ion-row {
+  align-items: center; /* Asegura que las filas estén centradas */
+  height: auto; /* Permite que las filas se adapten a su contenido */
+}
 
-.btn_panico{
-  margin-top: 40px;
-  font-size: 90px;
+ion-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Hace que el contenido ocupe toda la ventana */
+  padding: 16px;
 }
