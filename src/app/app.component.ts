@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Platform } from '@ionic/angular'; // Importar Platform
+import { Router } from '@angular/router'; // Importar Router
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(
+    private platform: Platform, // Inyectar Platform
+    private router: Router // Inyectar Router
+  ) {
+    this.iniciarApp();
+  }
+
+  iniciarApp() {
+    this.platform.ready().then(() => { // Cambiar redy() por ready()
+      this.router.navigateByUrl('splash'); // Usar router en lugar de route
+    });
+  }
 }

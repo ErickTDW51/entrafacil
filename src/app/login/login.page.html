@@ -1,22 +1,19 @@
-<ion-header [translucent]="true"></ion-header>
-
 <ion-content [fullscreen]="true" class="content">
-  <ion-grid class="form">
-    <ion-row>
-      <ion-col size-md="4" size-sm="10" offset-md="4" offset-sm="1" size-xs="12">
-        <ion-row class="titulo" class="ion-justify-content-center">
-          <h1>LOG IN</h1>
-        </ion-row>  
-        <ion-row>
-          <ion-input label="Email" label-placement="floating" fill="outline" placeholder="ejemplo@gmail.com" type="email"></ion-input>
-        </ion-row>
-        <br>
-        <ion-row>
-          <ion-input label="Password" label-placement="floating" fill="outline" placeholder="Password" type="password"></ion-input>
-        </ion-row>
-        <p>Olvidé mi <ion-router-link routerLink="">contraseña.</ion-router-link></p>
-        <ion-button expand="block" (click)="Entrar()">Entrar</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <div class="container ion-text-center">
+    <ion-label>Log in</ion-label>
+    <p></p>
+    <img src="./assets/logo.jpg" alt="">
+  </div>
+  <ion-card class="email">
+    <ion-input label="Email:" type="email" placeholder="email@domain.com"></ion-input>
+  </ion-card>
+  <ion-card class="pass">
+    <ion-input label="Password:" type="password" value=""></ion-input>
+  </ion-card>
+  <ion-label color="danger">
+    Olvide mi contraseña
+  </ion-label>
+  <ion-button class="btn_entrar" shape="round" expand="block" color="danger" (click)="Entrar()">
+    Entrar
+  </ion-button>
 </ion-content>
