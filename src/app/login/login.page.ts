@@ -13,7 +13,6 @@ export class LoginPage implements OnInit {
   authForm: FormGroup;
 
   constructor(private fb: FormBuilder, private authService:AuthService, private cookieService: CookieService, private router:Router) { }
-
   ngOnInit() {
     this.authForm = this.fb.group({
       usuario: ['', Validators.required],
