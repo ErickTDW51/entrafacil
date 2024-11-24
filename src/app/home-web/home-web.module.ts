@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { HomeWebPageRoutingModule } from './home-web-routing.module';
+import { HttpClientModule } from '@angular/common/http'; 
 
 import { HomeWebPage } from './home-web.page';
 
@@ -13,7 +14,8 @@ import { HomeWebPage } from './home-web.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomeWebPageRoutingModule
+    HomeWebPageRoutingModule,
+    HttpClientModule
   ],
   declarations: [HomeWebPage]
 })
