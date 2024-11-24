@@ -7,15 +7,29 @@
         <ion-row class="titulo" class="ion-justify-content-center">
           <h1>LOG IN</h1>
         </ion-row>  
-        <ion-row>
-          <ion-input label="Email" label-placement="floating" fill="outline" placeholder="ejemplo@gmail.com" type="email"></ion-input>
-        </ion-row>
-        <br>
-        <ion-row>
-          <ion-input label="Password" label-placement="floating" fill="outline" placeholder="Password" type="password"></ion-input>
-        </ion-row>
-        <p>Olvidé mi <ion-router-link routerLink="">contraseña.</ion-router-link></p>
-        <ion-button expand="block" (click)="Entrar()">Entrar</ion-button>
+
+        <form [formGroup]="authForm" (ngSubmit)="Entrar(authForm)">
+          <ion-row>
+            <ion-input formControlName="usuario" label="Email" label-placement="floating" fill="outline" placeholder="ejemplo@gmail.com" type="text"></ion-input>
+          </ion-row>
+          <div *ngIf="authForm.get('usuario').invalid && authForm.get('usuario').touched">
+            <small *ngIf="authForm.get('usuario').errors?.['required']">El usuario es obligatorio.</small>
+          </div>
+          
+          <br>
+          
+          <ion-row>
+            <ion-input label="Password" formControlName="password" label-placement="floating" fill="outline" placeholder="Password" type="password"></ion-input>
+          </ion-row>
+          <div *ngIf="authForm.get('password').invalid && authForm.get('password').touched">
+            <small *ngIf="authForm.get('password').errors?.['required']">La contraseña es obligatoria.</small>
+            <small *ngIf="authForm.get('password').errors?.['minlength']">La contraseña debe tener al menos 8 caracteres.</small>
+          </div>
+          
+          <p>Olvidé mi <ion-router-link routerLink="">contraseña.</ion-router-link></p>
+          
+          <ion-button expand="block" type="submit" [disabled]="authForm.invalid">Entrar</ion-button>
+        </form>
       </ion-col>
     </ion-row>
   </ion-grid>
