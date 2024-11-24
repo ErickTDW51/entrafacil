@@ -11,7 +11,7 @@ export class LoginPage implements OnInit {
   constructor(
     private NavCtrl: NavController
   ) { }
-  Entrar(){
+  Entrar(){ 
     this.NavCtrl.navigateForward("home");
   }
   ngOnInit() {

@@ -68,13 +68,13 @@ ion-card.opciones{
     margin: auto;
     top: 0;
     left: 50%;
-    transform: translate(-50%,55vh);
+    transform: translate(-50%,63vh);
     --background: #c51111;
     color: white;
     
     ion-row{
         border-radius: 25px;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         font-weight: 300;
 
     }
@@ -96,7 +96,7 @@ ion-card.opciones{
 }
 
 ion-row.panico {
-    margin-top: 10vh;
+    margin-top: 12vh;
     ion-col{
         display: flex;
         flex-direction: column;
@@ -114,7 +114,6 @@ ion-row.panico {
     ion-label {
         font-size: 1.5rem;
         font-weight: 300;
-        margin-top: 10px;
     }
     ion-row.icon-panico:active {
         transform: scale(1.1);
