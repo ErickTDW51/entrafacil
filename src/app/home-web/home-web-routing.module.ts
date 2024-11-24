@@ -5,7 +5,7 @@ import { HomeWebPage } from './home-web.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home-web',
     component: HomeWebPage,
     children:[
       {
@@ -20,10 +20,20 @@ const routes: Routes = [
         path:'crearperfil',
         loadChildren: () => import('../crearperfil/crearperfil.module').then( m => m.CrearperfilPageModule)
       },
+      {
+        path: '',
+        redirectTo: 'home-web/registro',
+        pathMatch: 'full'
+      }
       
     ]
-  },  
-
+  },
+  {
+    path: '',
+    redirectTo: 'home-web/registro',
+    pathMatch: 'full'
+  }
+    
   
 
 ];
