@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ToastController, AlertController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-pin',
-  templateUrl: './pin.page.html',
-  styleUrls: ['./pin.page.scss'],
+    selector: 'app-pin',
+    templateUrl: './pin.page.html',
+    styleUrls: ['./pin.page.scss'],
+    standalone: false
 })
 export class PinPage implements OnInit {
   number = 1234; // Tu número de 4 dígitos

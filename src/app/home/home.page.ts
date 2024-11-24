@@ -3,9 +3,10 @@ import { NavController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
+    selector: 'app-profile',
+    templateUrl: './home.page.html',
+    styleUrls: ['./home.page.scss'],
+    standalone: false
 })
 export class HomePage {
   constructor(

@@ -5,9 +5,10 @@ import { CookieService } from 'ngx-cookie-service';
 
 
 @Component({
-  selector: 'app-home-web',
-  templateUrl: './home-web.page.html',
-  styleUrls: ['./home-web.page.scss'],
+    selector: 'app-home-web',
+    templateUrl: './home-web.page.html',
+    styleUrls: ['./home-web.page.scss'],
+    standalone: false
 })
 export class HomeWebPage implements OnInit {
   Nombre: string;
