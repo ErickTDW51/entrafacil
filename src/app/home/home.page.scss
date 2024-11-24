@@ -1,44 +1,124 @@
-/* Centrando contenido dentro de las columnas */
-.centro {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Centra verticalmente */
-  align-items: center; /* Centra horizontalmente */
-  text-align: center;
-  height: 100%; /* Asegura que el contenedor ocupe todo el espacio */
+.pfContent{
+    background: var(--custom-pfContent-background);
+    border-radius: 25px;
+    padding-bottom: 20vh;
+    ion-text{
+        color: var(--ion-color-primary-contrast);
+    }
+    ion-icon{
+        padding: 5px;
+        border-radius: 100%;
+        background: var(--ion-color-primary-contrast);
+        color: var(--custom-pfContent-background);
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 50%;
+        font-size: 3rem;
+        transform: translateY(23vh)translateX(5vh);
+    }
+}
+.imagen{
+    transform: translatey(5vh);
+    ion-avatar{
+        height: 25vh;
+        width: 25vh;
+        border: 5px solid #c51111;
+        padding: 5px;
+    }
+}
+/*.abrir{
+    ion-col{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    ion-icon {
+        color: var(--custom-pfContent-background);
+        background: #58f379;
+        font-size: 7vh;
+        margin: 0 auto; Centrar horizontalmente//
+        padding: 10px;
+        border-radius: 50%; // Forma circular
+    }
+    ion-label {
+        color: var(--ion-color-primary-contrast);
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin-top: 10px;
+    }
+}
+*/
+
+
+
+ion-item.nombre{
+    margin-top: 90px;
+    --background: transparent;
+    ion-label{
+        font-size: 2rem;
+        font-weight: 600;
+    }
 }
 
-/* Tamaño y espaciado para avatar */
-ion-avatar {
-  height: 90px;
-  width: 90px;
-  margin: 0 auto; /* Centra horizontalmente el avatar */
+ion-card.opciones{
+    position: absolute;
+    width: 90%;
+    margin: auto;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,55vh);
+    --background: #c51111;
+    color: white;
+    
+    ion-row{
+        border-radius: 25px;
+        font-size: 1.5rem;
+        font-weight: 300;
+
+    }
+    ion-col{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    ion-icon{
+        background: var(--ion-color-primary-contrast);
+        color: var(--custom-pfContent-background);
+        border-radius: 100%;
+        padding: 7px;
+        font-size: 7vh;
+        margin: 5px;
+    }
+
 }
 
-/* Espaciado para los enlaces */
-ion-router-link {
-  margin-top: 10px;
-  color: inherit;
-  text-decoration: none;
-}
+ion-row.panico {
+    margin-top: 10vh;
+    ion-col{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-/* Tamaños de íconos y espaciado */
-.btn_user, .btn_pin, .btn_visitas, .btn_panico {
-  font-size: 90px;
-  margin-top: 20px; /* Ajusta el espaciado superior */
-}
+    ion-icon {
+        font-size: 10vh;
+        margin: 0 auto; /* Centrar horizontalmente */
+        padding: 10px;
+        border-radius: 50%; /* Forma circular */
+    }
 
-/* Alineación de la cuadrícula */
-ion-row {
-  align-items: center; /* Asegura que las filas estén centradas */
-  height: auto; /* Permite que las filas se adapten a su contenido */
-}
-
-ion-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Hace que el contenido ocupe toda la ventana */
-  padding: 16px;
+    ion-label {
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin-top: 10px;
+    }
+    ion-row.icon-panico:active {
+        transform: scale(1.1);
+        transition: transform 0.2s;
+    }
+    
 }
