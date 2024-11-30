@@ -1,0 +1,40 @@
+<ion-content [fullscreen]="true">
+  <div class="card-container">
+    <ion-card *ngFor="let user of users" class="user-card">
+      <div align="center" class="imagen">
+        <ion-avatar>
+          <img *ngIf="user.photoUrl" [src]="user.photoUrl" alt="Foto del perfil" />
+          <img *ngIf="!user.photoUrl" alt="Silhouette of a person's head"
+            src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+        <div class="nombre">
+          <ion-text>{{ user.nombre }}</ion-text>
+          <br />
+          <ion-text>{{ user.apellido }}</ion-text>
+          <br />
+        </div>
+        <ion-item lines="none" class="add">
+          <ion-label>
+            <ion-row (click)="agregarTarjeta(user.id,user.nuevaTarjeta)"
+            ><ion-icon color="success" name="card-outline"></ion-icon></ion-row>
+            <ion-row>Agregar tarjeta</ion-row>
+          </ion-label>
+        </ion-item>
+      </div>
+      
+      <div class="lista">
+        <ion-list>
+          <ion-item *ngFor="let card of user.tarjeta; let i = index" lines="none">
+            <ion-label>
+              Tarjeta {{ i + 1 }}: {{ card }}
+              <ion-icon color="danger" name="trash-outline" (click)="eliminarTarjeta(user.id, i)"></ion-icon>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div class="eliminar" (click)="EliminarUsuario(user.id)">
+        <ion-icon color="danger" name="person-remove-outline"></ion-icon>
+      </div>  
+    </ion-card>
+  </div>
+</ion-content>

@@ -21,6 +21,10 @@ const routes: Routes = [
         loadChildren: () => import('../crearperfil/crearperfil.module').then( m => m.CrearperfilPageModule)
       },
       {
+        path:'usuarios',
+        loadChildren: () => import('../usuarios/usuarios.module').then( m => m.UsuariosPageModule)
+      },
+      {
         path: '',
         redirectTo: 'home-web/registro',
         pathMatch: 'full'

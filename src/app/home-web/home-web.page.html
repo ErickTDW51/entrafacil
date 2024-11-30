@@ -1,8 +1,8 @@
 <ion-tabs>
-    <ion-tab-bar slot="top">
+    <ion-tab-bar slot="top" scrollable>
       <ion-tab-button tab="registro" href="/home-web/registro">
-        <ion-icon name="home-outline"></ion-icon>
-        <ion-label>registro</ion-label>
+        <ion-icon name="reader-outline"></ion-icon>
+        <ion-label>Historial</ion-label>
       </ion-tab-button>
 
       <ion-tab-button tab="controladmin" href="/home-web/controladmin">
@@ -14,5 +14,10 @@
         <ion-icon name="person-add-outline"></ion-icon>
         <ion-label>Crear perfil</ion-label>
       </ion-tab-button>
-    </ion-tab-bar>
+
+    <ion-tab-button tab="usuarios" href="/home-web/usuarios">
+      <ion-icon name="people-outline"></ion-icon>
+      <ion-label>Usuarios</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
   </ion-tabs>
