@@ -11,7 +11,7 @@ import { ToastController } from '@ionic/angular';
 export class HomePage {
   constructor(
     private navCtrl: NavController,
-    private alertController: AlertController // Inyecta el controlador de alertas
+   // private alertController: AlertController // Inyecta el controlador de alertas
   ) {}
 
   config() {
@@ -32,10 +32,10 @@ export class HomePage {
       // Realiza una solicitud GET o POST al ESP32
       const response = await this.http.get(`${this.esp32Ip}/open-door`).toPromise();
       console.log('Respuesta del ESP32:', response);
-      this.showToast('Puerta abierta con éxito', 'success');
+      //this.showToast('Puerta abierta con éxito', 'success');
     } catch (error) {
       console.error('Error al intentar abrir la puerta:', error);
-      this.showToast('Error al abrir la puerta', 'danger');
+      //this.showToast('Error al abrir la puerta', 'danger');
     }
   }
 
