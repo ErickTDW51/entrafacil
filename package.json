@@ -29,6 +29,7 @@
     "@capacitor/status-bar": "6.0.1",
     "@ionic-native/camera": "^5.36.0",
     "@ionic/angular": "^8.0.0",
+    "cookie-service": "^0.0.0",
     "cordova-plugin-call-number": "^1.0.1",
     "cordova-plugin-camera": "^8.0.0",
     "ionicons": "^7.0.0",
