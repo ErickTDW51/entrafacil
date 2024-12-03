@@ -17,7 +17,7 @@ export class AppComponent {
 
   iniciarApp() {
     this.platform.ready().then(() => { // Cambiar redy() por ready()
-      this.router.navigateByUrl('home-web'); // Usar router en lugar de route
+      this.router.navigateByUrl('splash'); // Usar router en lugar de route
     });
   }
 }
