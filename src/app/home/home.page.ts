@@ -1,22 +1,35 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController, ToastController } from '@ionic/angular';
-import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import { AuthService } from '../core/auth.service';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage{
+export class HomePage implements OnInit{
+  id_usuario:string;
+  rol: any;
+  tokenUser: any;
+  nombre:string;
+
   photoUrl: string = '';
   private esp32Ip = 'http://0.0.0.0'; // Cambia esta IP por la del ESP32
-  constructor(
-    private http: HttpClient,
-     private toastCtrl: ToastController,
+  apellidoP: any;
+  constructor( 
     private navCtrl: NavController,
-    private alertController: AlertController // Inyecta el controlador de alertas
+    private toastCtrl: ToastController,
+   private alertController: AlertController,
+   private fb: FormBuilder, 
+   private authService:AuthService, 
+   private cookieService: CookieService, 
+   private router:Router // Inyecta el controlador de alertas
   ) {}
+
 
   config() {
     this.navCtrl.navigateForward('/config');
@@ -29,19 +42,13 @@ export class HomePage{
   pin() {
     this.navCtrl.navigateForward('/pin');
   }
+  
   //funcion para abrir la puerta
 
   async Abrir() {
-    try {
-      // Realiza una solicitud GET o POST al ESP32
-      const response = await this.http.get(`${this.esp32Ip}/open-door`).toPromise();
-      console.log('Respuesta del ESP32:', response);
-      this.showToast('Puerta abierta con éxito', 'success');
-    } catch (error) {
-      console.error('Error al intentar abrir la puerta:', error);
-      this.showToast('Error al abrir la puerta', 'danger');
-    }
+    
   }
+  
 
   private async showToast(message: string, color: string) {
     const toast = await this.toastCtrl.create({
@@ -80,39 +87,36 @@ export class HomePage{
     });
     await alert.present();
   }
-  async editPhoto() {
-    try {
-      // Abre la cámara y toma una foto
-      const photo = await Camera.getPhoto({
-        quality: 90, // Calidad de la foto
-        allowEditing: false, // No permitir edición
-        resultType: CameraResultType.Uri, // Obtener la foto como una URL
-        source: CameraSource.Camera, // Usar la cámara del dispositivo
-      });
   
-      // Verifica si photo y photo.webPath existen y solo asigna si tiene un valor
-      if (photo && photo.webPath) {
-        this.photoUrl = photo.webPath; // Asigna la URL de la foto
-        console.log('Foto tomada:', this.photoUrl);
-      } else {
-        console.error('No se pudo obtener la foto');
-        this.showToast('No se pudo tomar la foto', 'danger');
-      }
-    } catch (error: unknown) {
-      // Verifica que el error sea una instancia de Error
-      if (error instanceof Error) {
-        console.error('Error al tomar la foto:', error.message);
-        if (error.name === 'User Cancelled') {
-          this.showToast('La acción fue cancelada por el usuario', 'warning');
-        } else {
-          this.showToast('Error al tomar la foto', 'danger');
+  ngOnInit(): void { 
+    const token = this.cookieService.get('token'); 
+    if (!token) { this.router.navigate(['']); 
+      return; 
+    }
+    this.id_usuario = this.cookieService.get('id_usuario');
+
+    this.authService.user(this.id_usuario).subscribe(response =>{
+        console.log('Response from API:', response);
+
+      if (Array.isArray(response) && response.length > 0) { 
+        const user = response[0];
+
+        this.rol = user.rol; // Asignamos el valor de rol correctamente
+        this.tokenUser = user.token;
+        this.nombre = user.nombre;
+        this.apellidoP =  user.apellidoP;
+        console.log(this.nombre);
+        
+        if (this.rol !== 'Admin' &&  this.tokenUser === "") { // Verificamos el valor de rol correctamente
+          this.router.navigate(['']);
         }
       } else {
-        // Si el error no es un Error, se maneja de manera genérica
-        console.error('Error desconocido al tomar la foto', error);
-        this.showToast('Error desconocido al tomar la foto', 'danger');
+        console.error('user_info no está definido');
+        this.router.navigate(['']);
       }
-    }
+    }, error => {
+      console.error('Error obteniendo la información del usuario:', error);
+      this.router.navigate(['']);
+    });
   }
-  
 }

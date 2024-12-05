@@ -4,7 +4,7 @@
     <p></p>
     <img src="./assets/logo.jpg" alt="">
   </div>
-  <form [formGroup]="authForm" (ngSubmit)="Entrar(authForm)">
+  <form [formGroup]="authForm">
     <ion-card class="email">
       <ion-input label="Email:" type="email" formControlName="usuario" placeholder="email@domain.com"></ion-input>
       <div *ngIf="authForm.get('usuario').invalid && authForm.get('usuario').touched">
@@ -22,7 +22,7 @@
     <ion-label color="danger">
       Olvide mi contraseña
     </ion-label>
-    <ion-button class="btn_entrar" shape="round" expand="block" color="danger" [disabled]="authForm.invalid">
+    <ion-button class="btn_entrar" shape="round" expand="block" color="danger" [disabled]="authForm.invalid" (click)="Entrar(authForm)">
       Entrar
     </ion-button>
   </form>
